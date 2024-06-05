@@ -25,12 +25,7 @@ public class TaskData {
             case "carol":
                 return carolsTasks;
             case "all":
-                Set<Task> allTasks = new HashSet<>();
-                allTasks.addAll(annsTasks);
-                allTasks.addAll(bobsTasks);
-                allTasks.addAll(carolsTasks);
-                allTasks.addAll(unassignedTasks);
-                return allTasks;
+                return getUnion(annsTasks,bobsTasks,carolsTasks);
             default:
                 return new HashSet<>();
         }
